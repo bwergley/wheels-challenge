@@ -1,36 +1,30 @@
 PODS:
-  - AFNetworking (2.7.0):
-    - AFNetworking/NSURLConnection (= 2.7.0)
-    - AFNetworking/NSURLSession (= 2.7.0)
-    - AFNetworking/Reachability (= 2.7.0)
-    - AFNetworking/Security (= 2.7.0)
-    - AFNetworking/Serialization (= 2.7.0)
-    - AFNetworking/UIKit (= 2.7.0)
-  - AFNetworking/NSURLConnection (2.7.0):
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.7.0):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.7.0)
-  - AFNetworking/Security (2.7.0)
-  - AFNetworking/Serialization (2.7.0)
-  - AFNetworking/UIKit (2.7.0):
-    - AFNetworking/NSURLConnection
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
 
 DEPENDENCIES:
-  - AFNetworking (~> 2.5)
+  - AFNetworking (~> 3.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
 
 SPEC CHECKSUMS:
-  AFNetworking: 8dd5f9b9691e09186393069a12cc3b5ed7c8b511
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
 
-PODFILE CHECKSUM: ac19e1a91001d34d1935b64bb9481c05c0fb757d
+PODFILE CHECKSUM: 8d809cc21695321aa2ccd6098794e8cd7569c4e2
 
 COCOAPODS: 1.7.5
