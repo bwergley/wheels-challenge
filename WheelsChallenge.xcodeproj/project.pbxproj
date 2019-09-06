@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CCF46B9C23231D9100C78924 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF46B9B23231D9100C78924 /* AppDelegate.swift */; };
+		CCF46BA123231D9100C78924 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCF46B9F23231D9100C78924 /* Main.storyboard */; };
+		CCF46BA323231D9300C78924 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCF46BA223231D9300C78924 /* Assets.xcassets */; };
+		CCF46BA623231D9300C78924 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCF46BA423231D9300C78924 /* LaunchScreen.storyboard */; };
+		CCF46BB423231FD200C78924 /* UserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF46BB323231FD100C78924 /* UserListViewController.m */; };
+		CCF46BB72323201900C78924 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF46BB62323201900C78924 /* AddUserViewController.swift */; };
+		CCF46BBA2323210500C78924 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF46BB82323210500C78924 /* UserTableViewCell.swift */; };
+		CCF46BBB2323210500C78924 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCF46BB92323210500C78924 /* UserTableViewCell.xib */; };
+		CCF46BBF232322BF00C78924 /* BadgeCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF46BBE232322BF00C78924 /* BadgeCountView.m */; };
+		CCF46BC1232323B700C78924 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF46BC0232323B700C78924 /* User.swift */; };
+		D91906325EBB9366343B7858 /* libPods-WheelsChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D93764FCFEC0B2184953A614 /* libPods-WheelsChallenge.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C3C23F6AB1EE1CDB9E8648A3 /* Pods-WheelsChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelsChallenge.release.xcconfig"; path = "Target Support Files/Pods-WheelsChallenge/Pods-WheelsChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		CCF46B9823231D9100C78924 /* WheelsChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheelsChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCF46B9B23231D9100C78924 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CCF46BA023231D9100C78924 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CCF46BA223231D9300C78924 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CCF46BA523231D9300C78924 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CCF46BA723231D9300C78924 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCF46BB123231FD100C78924 /* WheelsChallenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WheelsChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
+		CCF46BB223231FD100C78924 /* UserListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserListViewController.h; sourceTree = "<group>"; };
+		CCF46BB323231FD100C78924 /* UserListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserListViewController.m; sourceTree = "<group>"; };
+		CCF46BB62323201900C78924 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
+		CCF46BB82323210500C78924 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		CCF46BB92323210500C78924 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		CCF46BBD232322BF00C78924 /* BadgeCountView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BadgeCountView.h; sourceTree = "<group>"; };
+		CCF46BBE232322BF00C78924 /* BadgeCountView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BadgeCountView.m; sourceTree = "<group>"; };
+		CCF46BC0232323B700C78924 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D93764FCFEC0B2184953A614 /* libPods-WheelsChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WheelsChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5DCE90DF7C611935E571CB4 /* Pods-WheelsChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelsChallenge.debug.xcconfig"; path = "Target Support Files/Pods-WheelsChallenge/Pods-WheelsChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CCF46B9523231D9100C78924 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D91906325EBB9366343B7858 /* libPods-WheelsChallenge.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C874E9F765CEC5D75DDB256 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F5DCE90DF7C611935E571CB4 /* Pods-WheelsChallenge.debug.xcconfig */,
+				C3C23F6AB1EE1CDB9E8648A3 /* Pods-WheelsChallenge.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		39ED69A81AB32A24FD4B6731 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D93764FCFEC0B2184953A614 /* libPods-WheelsChallenge.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CCF46B8F23231D9100C78924 = {
+			isa = PBXGroup;
+			children = (
+				CCF46B9A23231D9100C78924 /* WheelsChallenge */,
+				CCF46B9923231D9100C78924 /* Products */,
+				0C874E9F765CEC5D75DDB256 /* Pods */,
+				39ED69A81AB32A24FD4B6731 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CCF46B9923231D9100C78924 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CCF46B9823231D9100C78924 /* WheelsChallenge.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CCF46B9A23231D9100C78924 /* WheelsChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				CCF46B9B23231D9100C78924 /* AppDelegate.swift */,
+				CCF46BB023231E7400C78924 /* Cells */,
+				CCF46BAF23231E6F00C78924 /* Managers */,
+				CCF46BAD23231E5E00C78924 /* Model */,
+				CCF46BB523231FE000C78924 /* Storyboards */,
+				CCF46BBC2323224C00C78924 /* Views */,
+				CCF46BAE23231E6900C78924 /* ViewControllers */,
+				CCF46BA223231D9300C78924 /* Assets.xcassets */,
+				CCF46BA723231D9300C78924 /* Info.plist */,
+				CCF46BB123231FD100C78924 /* WheelsChallenge-Bridging-Header.h */,
+			);
+			path = WheelsChallenge;
+			sourceTree = "<group>";
+		};
+		CCF46BAD23231E5E00C78924 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CCF46BC0232323B700C78924 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CCF46BAE23231E6900C78924 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CCF46BB223231FD100C78924 /* UserListViewController.h */,
+				CCF46BB323231FD100C78924 /* UserListViewController.m */,
+				CCF46BB62323201900C78924 /* AddUserViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CCF46BAF23231E6F00C78924 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		CCF46BB023231E7400C78924 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CCF46BB82323210500C78924 /* UserTableViewCell.swift */,
+				CCF46BB92323210500C78924 /* UserTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CCF46BB523231FE000C78924 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CCF46B9F23231D9100C78924 /* Main.storyboard */,
+				CCF46BA423231D9300C78924 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CCF46BBC2323224C00C78924 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCF46BBD232322BF00C78924 /* BadgeCountView.h */,
+				CCF46BBE232322BF00C78924 /* BadgeCountView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CCF46B9723231D9100C78924 /* WheelsChallenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCF46BAA23231D9300C78924 /* Build configuration list for PBXNativeTarget "WheelsChallenge" */;
+			buildPhases = (
+				81474C6E86A798495BD437EA /* [CP] Check Pods Manifest.lock */,
+				CCF46B9423231D9100C78924 /* Sources */,
+				CCF46B9523231D9100C78924 /* Frameworks */,
+				CCF46B9623231D9100C78924 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WheelsChallenge;
+			productName = WheelsChallenge;
+			productReference = CCF46B9823231D9100C78924 /* WheelsChallenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CCF46B9023231D9100C78924 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Brad Wergley";
+				TargetAttributes = {
+					CCF46B9723231D9100C78924 = {
+						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
+					};
+				};
+			};
+			buildConfigurationList = CCF46B9323231D9100C78924 /* Build configuration list for PBXProject "WheelsChallenge" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CCF46B8F23231D9100C78924;
+			productRefGroup = CCF46B9923231D9100C78924 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CCF46B9723231D9100C78924 /* WheelsChallenge */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CCF46B9623231D9100C78924 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCF46BBB2323210500C78924 /* UserTableViewCell.xib in Resources */,
+				CCF46BA623231D9300C78924 /* LaunchScreen.storyboard in Resources */,
+				CCF46BA323231D9300C78924 /* Assets.xcassets in Resources */,
+				CCF46BA123231D9100C78924 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		81474C6E86A798495BD437EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WheelsChallenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CCF46B9423231D9100C78924 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCF46BBA2323210500C78924 /* UserTableViewCell.swift in Sources */,
+				CCF46BBF232322BF00C78924 /* BadgeCountView.m in Sources */,
+				CCF46BC1232323B700C78924 /* User.swift in Sources */,
+				CCF46BB72323201900C78924 /* AddUserViewController.swift in Sources */,
+				CCF46B9C23231D9100C78924 /* AppDelegate.swift in Sources */,
+				CCF46BB423231FD200C78924 /* UserListViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CCF46B9F23231D9100C78924 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCF46BA023231D9100C78924 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CCF46BA423231D9300C78924 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCF46BA523231D9300C78924 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CCF46BA823231D9300C78924 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CCF46BA923231D9300C78924 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CCF46BAB23231D9300C78924 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5DCE90DF7C611935E571CB4 /* Pods-WheelsChallenge.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = WheelsChallenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wergley.WheelsChallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WheelsChallenge/WheelsChallenge-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CCF46BAC23231D9300C78924 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3C23F6AB1EE1CDB9E8648A3 /* Pods-WheelsChallenge.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = WheelsChallenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wergley.WheelsChallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WheelsChallenge/WheelsChallenge-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CCF46B9323231D9100C78924 /* Build configuration list for PBXProject "WheelsChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCF46BA823231D9300C78924 /* Debug */,
+				CCF46BA923231D9300C78924 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCF46BAA23231D9300C78924 /* Build configuration list for PBXNativeTarget "WheelsChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCF46BAB23231D9300C78924 /* Debug */,
+				CCF46BAC23231D9300C78924 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CCF46B9023231D9100C78924 /* Project object */;
+}
