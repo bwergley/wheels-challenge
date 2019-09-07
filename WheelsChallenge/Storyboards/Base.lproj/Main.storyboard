@@ -39,7 +39,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Stack Overflow Users" id="yUB-fg-qmu">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="HQn-SP-Gw9">
+                        <barButtonItem key="rightBarButtonItem" id="HQn-SP-Gw9">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="QwG-bz-oIi">
                                 <rect key="frame" x="372" y="11" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

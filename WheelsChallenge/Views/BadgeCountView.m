@@ -17,19 +17,17 @@
 
 @implementation BadgeCountView
 
-- (void) awakeFromNib
-{
+- (void) awakeFromNib {
     [super awakeFromNib];
     
-    CGFloat badgeRadius = 8.0;
+    CGFloat badgeRadius = 6.0;
     self.badgeView = [[UIView alloc] initWithFrame:CGRectZero];
     [self addSubview:self.badgeView];
     [self.badgeView setBackgroundColor:[UIColor blueColor]];
     [self.badgeView.layer setCornerRadius:badgeRadius];
     self.badgeView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.badgeView.leftAnchor constraintEqualToAnchor:self.leftAnchor].active = YES;
-    [self.badgeView.topAnchor constraintEqualToAnchor:self.topAnchor].active = YES;
-    [self.badgeView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor].active = YES;
+    [self.badgeView.centerYAnchor constraintEqualToAnchor:self.centerYAnchor].active = YES;
     [self.badgeView.widthAnchor constraintEqualToConstant:badgeRadius*2].active = YES;
     [self.badgeView.heightAnchor constraintEqualToConstant:badgeRadius*2].active = YES;
     
@@ -44,8 +42,7 @@
     [self.countLabel setTextColor:[UIColor lightGrayColor]];
 }
 
-- (void) setBadgeCount:(NSInteger)count withColor:(UIColor *)color
-{
+- (void) setBadgeCount:(NSInteger)count withColor:(UIColor *)color {
     self.countLabel.text = [NSString stringWithFormat:@"%i", (int)count];
     self.badgeView.backgroundColor = color;
 }

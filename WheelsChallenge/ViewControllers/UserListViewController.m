@@ -49,8 +49,7 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     NSInteger row = indexPath.row;
-    if (self.users != nil && row < self.users.count)
-    {
+    if (self.users != nil && row < self.users.count) {
         UserTableViewCell *cell = (UserTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:[UserTableViewCell cellId]];
         cell.user = self.users[row];
         return cell;
@@ -60,12 +59,10 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.users != nil)
-    {
+    if (self.users != nil) {
         return self.users.count;
     }
-    else
-    {
+    else {
         return 0;
     }
 }
@@ -78,7 +75,7 @@
     if ([[segue identifier] isEqualToString:@"AddUserSegue"]) {
         AddUserViewController *vc = [segue destinationViewController];
         vc.addUserCompletionBlock = ^(User *user) {
-            [self.users addObject:user];
+            [self.users insertObject:user atIndex:0];
             [self.tableView reloadData];
         };
     }

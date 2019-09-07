@@ -14,6 +14,6 @@
 
 + (nullable ImageManager *) sharedInstance;
 
-- (void) beginGetImageWithUrlString:(NSString *)urlString completion:(void (^_Nullable)(UIImage *_Nullable))completionBlock;
+- (void) beginGetImageWithUrlString:(NSString *_Nullable)urlString completion:(void (^_Nullable)(UIImage *_Nullable))completionBlock;
 
 @end

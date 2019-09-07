@@ -14,7 +14,7 @@
 
 @implementation UserManager
 
-NSString *userListEndpointUrlString = @"https://api.stackexchange.com/2.2/users?site=stackoverflow";
+NSString *userListEndpointUrlString = @"https://api.stackexchange.com/2.2/users?site=stackoverflow&page=1";
 
 + (UserManager *) sharedInstance {
     static dispatch_once_t once;

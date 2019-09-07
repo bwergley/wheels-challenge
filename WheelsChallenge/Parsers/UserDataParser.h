@@ -12,8 +12,6 @@
 @interface UserDataParser : NSObject
 
 - (nullable NSArray <User *> *)parseUserListWithResponseObject:(id _Nullable)responseObject;
-
 - (nullable User *)parseUserWithDictionary:(nullable NSDictionary *)dictionary;
-
 
 @end

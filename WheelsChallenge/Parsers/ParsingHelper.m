@@ -10,26 +10,20 @@
 
 @implementation ParsingHelper
 
-+ (NSInteger) convertInteger:(id)object defaultInteger:(NSInteger)defaultInteger
-{
-    if ([object isKindOfClass:[NSNumber class]])
-    {
++ (NSInteger) convertInteger:(id)object defaultInteger:(NSInteger)defaultInteger {
+    if ([object isKindOfClass:[NSNumber class]]) {
         return [object integerValue];
     }
-    else
-    {
+    else {
         return defaultInteger;
     }
 }
 
-+ (NSString *) convertString:(id)object defaultString:(NSString *)defaultString
-{
-    if ([object isKindOfClass:[NSString class]])
-    {
++ (NSString *) convertString:(id)object defaultString:(NSString *)defaultString {
+    if ([object isKindOfClass:[NSString class]]) {
         return object;
     }
-    else
-    {
+    else {
         return defaultString;
     }
 }
