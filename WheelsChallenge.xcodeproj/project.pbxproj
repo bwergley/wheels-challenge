@@ -22,6 +22,7 @@
 		CCF46BCB2323395200C78924 /* ParsingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF46BCA2323395200C78924 /* ParsingHelper.m */; };
 		CCF46BCF23234F4200C78924 /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF46BCE23234F4200C78924 /* UIColor+AppColors.m */; };
 		CCF46BD223241C8800C78924 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF46BD023241C8800C78924 /* ImageManager.m */; };
+		CCF46BD4232433EE00C78924 /* UserTextEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF46BD3232433EE00C78924 /* UserTextEntryView.swift */; };
 		D91906325EBB9366343B7858 /* libPods-WheelsChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D93764FCFEC0B2184953A614 /* libPods-WheelsChallenge.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		CCF46BCE23234F4200C78924 /* UIColor+AppColors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppColors.m"; sourceTree = "<group>"; };
 		CCF46BD023241C8800C78924 /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
 		CCF46BD123241C8800C78924 /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
+		CCF46BD3232433EE00C78924 /* UserTextEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTextEntryView.swift; sourceTree = "<group>"; };
 		D93764FCFEC0B2184953A614 /* libPods-WheelsChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WheelsChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5DCE90DF7C611935E571CB4 /* Pods-WheelsChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelsChallenge.debug.xcconfig"; path = "Target Support Files/Pods-WheelsChallenge/Pods-WheelsChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +176,7 @@
 			children = (
 				CCF46BBD232322BF00C78924 /* BadgeCountView.h */,
 				CCF46BBE232322BF00C78924 /* BadgeCountView.m */,
+				CCF46BD3232433EE00C78924 /* UserTextEntryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				CCF46BBF232322BF00C78924 /* BadgeCountView.m in Sources */,
 				CCF46BC1232323B700C78924 /* User.swift in Sources */,
 				CCF46BCF23234F4200C78924 /* UIColor+AppColors.m in Sources */,
+				CCF46BD4232433EE00C78924 /* UserTextEntryView.swift in Sources */,
 				CCF46BB72323201900C78924 /* AddUserViewController.swift in Sources */,
 				CCF46BCB2323395200C78924 /* ParsingHelper.m in Sources */,
 				CCF46B9C23231D9100C78924 /* AppDelegate.swift in Sources */,

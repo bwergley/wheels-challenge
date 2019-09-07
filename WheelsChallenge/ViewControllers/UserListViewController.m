@@ -70,4 +70,14 @@
     }
 }
 
+- (IBAction)plusButtonTapped:(id)sender {
+    [self performSegueWithIdentifier:@"AddUserSegue" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"AddUserSegue"]) {
+        AddUserViewController *vc = [segue destinationViewController];
+    }
+}
+
 @end

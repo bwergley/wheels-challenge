@@ -38,7 +38,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Stack Overflow Users" id="yUB-fg-qmu"/>
+                    <navigationItem key="navigationItem" title="Stack Overflow Users" id="yUB-fg-qmu">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="HQn-SP-Gw9">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="QwG-bz-oIi">
+                                <rect key="frame" x="372" y="11" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="plusButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U3x-cF-Qws"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <segue destination="Z5i-p4-sFD" kind="show" identifier="AddUserSegue" id="URB-qq-6L7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="spinnerView" destination="xqP-J9-pcT" id="9aa-yZ-zp1"/>
                         <outlet property="tableView" destination="72j-AB-gw7" id="r14-ZW-WGA"/>
@@ -48,20 +61,105 @@
             </objects>
             <point key="canvasLocation" x="344.92753623188406" y="87.723214285714278"/>
         </scene>
-        <!--Add User View Controller-->
+        <!--Add User-->
         <scene sceneID="lNq-PL-g6f">
             <objects>
                 <viewController id="Z5i-p4-sFD" customClass="AddUserViewController" customModule="WheelsChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PDG-aP-YJv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTs-YQ-uhB">
+                                <rect key="frame" x="0.0" y="822" width="414" height="40"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0Bq-DK-ehu"/>
+                                </constraints>
+                                <state key="normal" title="Add User"/>
+                                <connections>
+                                    <action selector="addUserTapped" destination="Z5i-p4-sFD" eventType="touchUpInside" id="VQ1-wl-S7v"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RVD-rK-qLg">
+                                <rect key="frame" x="0.0" y="88" width="414" height="734"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N2Q-Yg-LSJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5S-tK-oPy" userLabel="Display Name Text Entry View" customClass="UserTextEntryView" customModule="WheelsChallenge" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="eCD-hI-6nP"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARl-C9-jLh" userLabel="Reputation Text Entry View" customClass="UserTextEntryView" customModule="WheelsChallenge" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="200" width="414" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="i1J-4y-BmS"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIG-R1-EZ9" userLabel="Gold Badge Text Entry View" customClass="UserTextEntryView" customModule="WheelsChallenge" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="400" width="414" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="c3N-co-5YH"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yAg-l4-89H" userLabel="Silver Badge Text Entry View" customClass="UserTextEntryView" customModule="WheelsChallenge" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="600" width="414" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="NZx-MG-Dub"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dfe-wi-nQO" userLabel="Bronze Badge Text Entry View" customClass="UserTextEntryView" customModule="WheelsChallenge" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="800" width="414" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="pg7-di-vUW"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="N2Q-Yg-LSJ" firstAttribute="top" secondItem="RVD-rK-qLg" secondAttribute="top" id="FiM-UX-2Sw"/>
+                                    <constraint firstItem="N2Q-Yg-LSJ" firstAttribute="width" secondItem="RVD-rK-qLg" secondAttribute="width" id="GXu-K4-X5Q"/>
+                                    <constraint firstAttribute="bottom" secondItem="N2Q-Yg-LSJ" secondAttribute="bottom" id="SEj-es-tPg"/>
+                                    <constraint firstAttribute="trailing" secondItem="N2Q-Yg-LSJ" secondAttribute="trailing" id="dzh-rb-tnU"/>
+                                    <constraint firstItem="N2Q-Yg-LSJ" firstAttribute="leading" secondItem="RVD-rK-qLg" secondAttribute="leading" id="oVO-zy-Tdd"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hTs-YQ-uhB" firstAttribute="top" secondItem="RVD-rK-qLg" secondAttribute="bottom" id="Nv6-d9-SPC"/>
+                            <constraint firstItem="mnT-Of-oyb" firstAttribute="bottom" secondItem="hTs-YQ-uhB" secondAttribute="bottom" id="UEL-nr-H6v"/>
+                            <constraint firstItem="mnT-Of-oyb" firstAttribute="trailing" secondItem="hTs-YQ-uhB" secondAttribute="trailing" id="W9d-aa-XZj"/>
+                            <constraint firstItem="RVD-rK-qLg" firstAttribute="leading" secondItem="mnT-Of-oyb" secondAttribute="leading" id="dSH-M8-LEg"/>
+                            <constraint firstItem="RVD-rK-qLg" firstAttribute="top" secondItem="mnT-Of-oyb" secondAttribute="top" id="fOt-Ki-uww"/>
+                            <constraint firstItem="hTs-YQ-uhB" firstAttribute="leading" secondItem="mnT-Of-oyb" secondAttribute="leading" id="glF-Ts-lIW"/>
+                            <constraint firstItem="mnT-Of-oyb" firstAttribute="trailing" secondItem="RVD-rK-qLg" secondAttribute="trailing" id="s80-Wk-cZw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mnT-Of-oyb"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add User" id="fuz-rx-SAL">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="0db-i2-4iD"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bronzeBadgeTextEntryView" destination="Dfe-wi-nQO" id="TBx-xu-jIz"/>
+                        <outlet property="displayNameTextEntryView" destination="W5S-tK-oPy" id="xAc-GP-0WQ"/>
+                        <outlet property="goldBadgeTextEntryView" destination="MIG-R1-EZ9" id="3Cq-7W-voa"/>
+                        <outlet property="reputationTextEntryView" destination="ARl-C9-jLh" id="hsr-aM-whX"/>
+                        <outlet property="scrollView" destination="RVD-rK-qLg" id="GFG-t9-j2J"/>
+                        <outlet property="silverBadgeTextEntryView" destination="yAg-l4-89H" id="IIj-lS-bcR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biR-z7-Urd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1576.8115942028987" y="18.75"/>
+            <point key="canvasLocation" x="1146" y="88"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JF6-Rc-Jp4">
