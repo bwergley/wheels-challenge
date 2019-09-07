@@ -10,4 +10,6 @@
 
 @interface BadgeCountView : UIView
 
+- (void) setBadgeCount:(NSInteger)count withColor:(UIColor *)color;
+
 @end
