@@ -8,13 +8,17 @@
 
 import UIKit
 
-class User: UIView {
+@objc class User: NSObject {
 
-    public private(set) var displayName: String?
-    public private(set) var profileImageUrlString: String?
-    public private(set) var reputation: NSInteger?
-    public private(set) var goldBadgeCount: NSInteger?
-    public private(set) var silverBadgeCount: NSInteger?
-    public private(set) var bronzeBadgeCount: NSInteger?
+    @objc public var displayName: String?
+    @objc public var profileImageUrlString: String?
+    @objc public var reputation: NSInteger = 0
+    @objc public var goldBadgeCount: NSInteger = 0
+    @objc public var silverBadgeCount: NSInteger = 0
+    @objc public var bronzeBadgeCount: NSInteger = 0
+    
+    override init() {
+        super.init()
+    }
 
 }

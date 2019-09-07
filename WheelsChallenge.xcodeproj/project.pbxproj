@@ -17,6 +17,9 @@
 		CCF46BBB2323210500C78924 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCF46BB92323210500C78924 /* UserTableViewCell.xib */; };
 		CCF46BBF232322BF00C78924 /* BadgeCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF46BBE232322BF00C78924 /* BadgeCountView.m */; };
 		CCF46BC1232323B700C78924 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF46BC0232323B700C78924 /* User.swift */; };
+		CCF46BC42323297A00C78924 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF46BC32323297A00C78924 /* UserManager.m */; };
+		CCF46BC8232330F800C78924 /* UserDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF46BC7232330F800C78924 /* UserDataParser.m */; };
+		CCF46BCB2323395200C78924 /* ParsingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF46BCA2323395200C78924 /* ParsingHelper.m */; };
 		D91906325EBB9366343B7858 /* libPods-WheelsChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D93764FCFEC0B2184953A614 /* libPods-WheelsChallenge.a */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +40,12 @@
 		CCF46BBD232322BF00C78924 /* BadgeCountView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BadgeCountView.h; sourceTree = "<group>"; };
 		CCF46BBE232322BF00C78924 /* BadgeCountView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BadgeCountView.m; sourceTree = "<group>"; };
 		CCF46BC0232323B700C78924 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CCF46BC22323297A00C78924 /* UserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
+		CCF46BC32323297A00C78924 /* UserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
+		CCF46BC6232330F800C78924 /* UserDataParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDataParser.h; sourceTree = "<group>"; };
+		CCF46BC7232330F800C78924 /* UserDataParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDataParser.m; sourceTree = "<group>"; };
+		CCF46BC92323395200C78924 /* ParsingHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParsingHelper.h; sourceTree = "<group>"; };
+		CCF46BCA2323395200C78924 /* ParsingHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParsingHelper.m; sourceTree = "<group>"; };
 		D93764FCFEC0B2184953A614 /* libPods-WheelsChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WheelsChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5DCE90DF7C611935E571CB4 /* Pods-WheelsChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelsChallenge.debug.xcconfig"; path = "Target Support Files/Pods-WheelsChallenge/Pods-WheelsChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +104,7 @@
 				CCF46BB023231E7400C78924 /* Cells */,
 				CCF46BAF23231E6F00C78924 /* Managers */,
 				CCF46BAD23231E5E00C78924 /* Model */,
+				CCF46BC52323307900C78924 /* Parsers */,
 				CCF46BB523231FE000C78924 /* Storyboards */,
 				CCF46BBC2323224C00C78924 /* Views */,
 				CCF46BAE23231E6900C78924 /* ViewControllers */,
@@ -126,6 +136,8 @@
 		CCF46BAF23231E6F00C78924 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				CCF46BC22323297A00C78924 /* UserManager.h */,
+				CCF46BC32323297A00C78924 /* UserManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -155,6 +167,17 @@
 				CCF46BBE232322BF00C78924 /* BadgeCountView.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CCF46BC52323307900C78924 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				CCF46BC6232330F800C78924 /* UserDataParser.h */,
+				CCF46BC7232330F800C78924 /* UserDataParser.m */,
+				CCF46BC92323395200C78924 /* ParsingHelper.h */,
+				CCF46BCA2323395200C78924 /* ParsingHelper.m */,
+			);
+			path = Parsers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,9 +280,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCF46BBA2323210500C78924 /* UserTableViewCell.swift in Sources */,
+				CCF46BC8232330F800C78924 /* UserDataParser.m in Sources */,
+				CCF46BC42323297A00C78924 /* UserManager.m in Sources */,
 				CCF46BBF232322BF00C78924 /* BadgeCountView.m in Sources */,
 				CCF46BC1232323B700C78924 /* User.swift in Sources */,
 				CCF46BB72323201900C78924 /* AddUserViewController.swift in Sources */,
+				CCF46BCB2323395200C78924 /* ParsingHelper.m in Sources */,
 				CCF46B9C23231D9100C78924 /* AppDelegate.swift in Sources */,
 				CCF46BB423231FD200C78924 /* UserListViewController.m in Sources */,
 			);

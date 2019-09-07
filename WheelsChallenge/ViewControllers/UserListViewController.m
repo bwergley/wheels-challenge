@@ -8,6 +8,8 @@
 
 #import "UserListViewController.h"
 
+#import "UserManager.h"
+
 @interface UserListViewController ()
 
 @end
@@ -18,7 +20,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
+    [[UserManager sharedInstance] beginGetUserListWithCompletion:^(NSArray<User *> *users) {
+        
+    }];
 }
 
 /*
