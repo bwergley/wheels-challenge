@@ -21,6 +21,7 @@
 		CCF46BC8232330F800C78924 /* UserDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF46BC7232330F800C78924 /* UserDataParser.m */; };
 		CCF46BCB2323395200C78924 /* ParsingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF46BCA2323395200C78924 /* ParsingHelper.m */; };
 		CCF46BCF23234F4200C78924 /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF46BCE23234F4200C78924 /* UIColor+AppColors.m */; };
+		CCF46BD223241C8800C78924 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF46BD023241C8800C78924 /* ImageManager.m */; };
 		D91906325EBB9366343B7858 /* libPods-WheelsChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D93764FCFEC0B2184953A614 /* libPods-WheelsChallenge.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,8 @@
 		CCF46BCA2323395200C78924 /* ParsingHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParsingHelper.m; sourceTree = "<group>"; };
 		CCF46BCD23234F4200C78924 /* UIColor+AppColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppColors.h"; sourceTree = "<group>"; };
 		CCF46BCE23234F4200C78924 /* UIColor+AppColors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppColors.m"; sourceTree = "<group>"; };
+		CCF46BD023241C8800C78924 /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
+		CCF46BD123241C8800C78924 /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
 		D93764FCFEC0B2184953A614 /* libPods-WheelsChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WheelsChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5DCE90DF7C611935E571CB4 /* Pods-WheelsChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelsChallenge.debug.xcconfig"; path = "Target Support Files/Pods-WheelsChallenge/Pods-WheelsChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,6 +143,8 @@
 		CCF46BAF23231E6F00C78924 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				CCF46BD123241C8800C78924 /* ImageManager.h */,
+				CCF46BD023241C8800C78924 /* ImageManager.m */,
 				CCF46BC22323297A00C78924 /* UserManager.h */,
 				CCF46BC32323297A00C78924 /* UserManager.m */,
 			);
@@ -292,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCF46BD223241C8800C78924 /* ImageManager.m in Sources */,
 				CCF46BBA2323210500C78924 /* UserTableViewCell.swift in Sources */,
 				CCF46BC8232330F800C78924 /* UserDataParser.m in Sources */,
 				CCF46BC42323297A00C78924 /* UserManager.m in Sources */,

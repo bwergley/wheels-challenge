@@ -40,6 +40,8 @@
     [self.countLabel.topAnchor constraintEqualToAnchor:self.topAnchor].active = YES;
     [self.countLabel.bottomAnchor constraintEqualToAnchor:self.bottomAnchor].active = YES;
     [self.countLabel.rightAnchor constraintEqualToAnchor:self.rightAnchor].active = YES;
+    [self.countLabel setFont:[UIFont systemFontOfSize:16]];
+    [self.countLabel setTextColor:[UIColor lightGrayColor]];
 }
 
 - (void) setBadgeCount:(NSInteger)count withColor:(UIColor *)color

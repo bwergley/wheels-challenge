@@ -32,28 +32,24 @@ class UserTableViewCell: UITableViewCell {
     }
     
     private func update(with user: User?) {
-        if let user = user
-        {
+        if let user = user {
             self.displayNameLabel?.text = user.displayName
-            self.reputationLabel?.text = "\(user.reputation)"
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            let formattedNumber = numberFormatter.string(from: NSNumber(value:user.reputation))
+            self.reputationLabel?.text = "\(formattedNumber ?? "")"
             self.goldBadgeCountView?.setBadgeCount(user.goldBadgeCount, with: UIColor.goldBadge())
             self.silverBadgeCountView?.setBadgeCount(user.silverBadgeCount, with: UIColor.silverBadge())
             self.bronzeBadgeCountView?.setBadgeCount(user.bronzeBadgeCount, with: UIColor.bronzeBadge())
             
-            if let imageUrlString = user.profileImageUrlString,
-                let imageUrl = URL(string: imageUrlString) {
-                
-                let downloader = AFImageDownloader.defaultInstance()
-                let request = NSURLRequest(url: imageUrl)
-                downloader.downloadImage(for: request as URLRequest, success: { (request, response, image) in
-                    DispatchQueue.main.async { [weak self] in
+            if let imageUrlString = user.profileImageUrlString {
+                ImageManager.sharedInstance()?.beginGetImage(withUrlString: imageUrlString, completion: { [weak self] (image) in
+                    DispatchQueue.main.async {
                         if self?.user?.profileImageUrlString == imageUrlString {
                             self?.profileImageView?.image = image
                         }
                     }
-                }) { (request, response, error) in
-                    
-                }
+                })
             }
         }
     }

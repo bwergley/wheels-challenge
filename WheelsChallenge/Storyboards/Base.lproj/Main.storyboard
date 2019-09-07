@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="owF-E5-Kkf">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--User List View Controller-->
+        <!--Stack Overflow Users-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="UserListViewController" sceneMemberID="viewController">
@@ -18,8 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xqP-J9-pcT">
+                                <rect key="frame" x="197" y="465" width="20" height="20"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="72j-AB-gw7">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
@@ -28,18 +31,22 @@
                         <constraints>
                             <constraint firstItem="72j-AB-gw7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1a7-TI-xPG"/>
                             <constraint firstAttribute="trailing" secondItem="72j-AB-gw7" secondAttribute="trailing" id="22T-XM-Ytq"/>
+                            <constraint firstItem="xqP-J9-pcT" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="3xu-SN-7E6"/>
                             <constraint firstAttribute="bottom" secondItem="72j-AB-gw7" secondAttribute="bottom" id="4PJ-Sp-R8g"/>
                             <constraint firstItem="72j-AB-gw7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NF8-NV-NJX"/>
+                            <constraint firstItem="xqP-J9-pcT" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nH3-q3-Xa8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Stack Overflow Users" id="yUB-fg-qmu"/>
                     <connections>
+                        <outlet property="spinnerView" destination="xqP-J9-pcT" id="9aa-yZ-zp1"/>
                         <outlet property="tableView" destination="72j-AB-gw7" id="r14-ZW-WGA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-565" y="88"/>
+            <point key="canvasLocation" x="344.92753623188406" y="87.723214285714278"/>
         </scene>
         <!--Add User View Controller-->
         <scene sceneID="lNq-PL-g6f">
@@ -54,6 +61,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biR-z7-Urd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1576.8115942028987" y="18.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JF6-Rc-Jp4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="owF-E5-Kkf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fjd-fi-CVg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8fL-bh-1VV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7pU-rA-6GS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-565.21739130434787" y="87.723214285714278"/>
         </scene>
     </scenes>
 </document>

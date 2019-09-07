@@ -32,10 +32,17 @@
      registerNib:[UINib nibWithNibName:@"UserTableViewCell" bundle:nil]
      forCellReuseIdentifier:[UserTableViewCell cellId]];
     
+    self.tableView.alpha = 0;
+    __weak typeof(self) weakSelf = self;
     [[UserManager sharedInstance] beginGetUserListWithCompletion:^(NSArray<User *> *users) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.users = users;
-            [self.tableView reloadData];
+            weakSelf.users = users;
+            [weakSelf.tableView reloadData];
+            [UIView animateWithDuration:0.5 animations:^{
+                weakSelf.tableView.alpha = 1;
+            } completion:^(BOOL finished) {
+                [weakSelf.spinnerView stopAnimating];
+            }];
         });
     }];
 }
