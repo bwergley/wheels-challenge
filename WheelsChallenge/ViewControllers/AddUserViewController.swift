@@ -8,7 +8,9 @@
 
 import UIKit
 
-class AddUserViewController: UIViewController {
+class AddUserViewController: UIViewController, UserTextEntryViewDelegate {
+    
+    @objc public var addUserCompletionBlock: ((User?) -> Void)?
     
     @IBOutlet weak var scrollView: UIScrollView?
     @IBOutlet weak var displayNameTextEntryView: UserTextEntryView?
@@ -16,6 +18,9 @@ class AddUserViewController: UIViewController {
     @IBOutlet weak var goldBadgeTextEntryView: UserTextEntryView?
     @IBOutlet weak var silverBadgeTextEntryView: UserTextEntryView?
     @IBOutlet weak var bronzeBadgeTextEntryView: UserTextEntryView?
+    @IBOutlet weak var addUserButton: UIButton?
+    @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint?
+    @IBOutlet weak var addUserButtonHeightConstraint: NSLayoutConstraint?
     
     private var textEntryViews: [UserTextEntryView?]?
     
@@ -25,13 +30,22 @@ class AddUserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textEntryViews = [displayNameTextEntryView, reputationTextEntryView, goldBadgeTextEntryView, silverBadgeTextEntryView, bronzeBadgeTextEntryView]
         self.setupTextEntryViews()
+        self.addKeyboardObservers()
+        self.adjustAddUserButtonHeight(addSafeAreaHeight: true)
     }
     
-    private func setupTextEntryViews()
-    {
-        self.displayNameTextEntryView?.set(placeholderText: "Display Name", validateForErrorBlock: { (text) -> String? in
+    private func adjustAddUserButtonHeight(addSafeAreaHeight: Bool) {
+        let bottomSafeArea = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
+        self.addUserButtonHeightConstraint?.constant = 40 + (addSafeAreaHeight ? bottomSafeArea : 0)
+        self.addUserButton?.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: addSafeAreaHeight ? bottomSafeArea : 0, right: 0)
+    }
+    
+    private func setupTextEntryViews() {
+        self.textEntryViews = [self.displayNameTextEntryView, self.reputationTextEntryView, self.goldBadgeTextEntryView, self.silverBadgeTextEntryView, self.bronzeBadgeTextEntryView]
+        self.displayNameTextEntryView?.set(delegate: self,
+                                           placeholderText: "Display Name",
+                                           validateForErrorBlock: { (text) -> String? in
             if text?.count ?? 0 > 0 {
                 return nil
             }
@@ -40,7 +54,10 @@ class AddUserViewController: UIViewController {
             }
         })
         
-        self.reputationTextEntryView?.set(placeholderText: "Reputation", validateForErrorBlock: { (text) -> String? in
+        self.reputationTextEntryView?.set(delegate: self,
+                                          placeholderText: "Reputation",
+                                          keyboardType: .numberPad,
+                                          validateForErrorBlock: { (text) -> String? in
             if let number = Int(text ?? ""),
                 number % 2 == 1 {
                 return nil
@@ -50,7 +67,10 @@ class AddUserViewController: UIViewController {
             }
         })
         
-        self.goldBadgeTextEntryView?.set(placeholderText: "Gold Badge Count", validateForErrorBlock: { (text) -> String? in
+        self.goldBadgeTextEntryView?.set(delegate: self,
+                                         placeholderText: "Gold Badge Count",
+                                         keyboardType: .numberPad,
+                                         validateForErrorBlock: { (text) -> String? in
             if let number = Int(text ?? ""),
                 number % 3 == 0 {
                 return nil
@@ -60,7 +80,10 @@ class AddUserViewController: UIViewController {
             }
         })
         
-        self.silverBadgeTextEntryView?.set(placeholderText: "Silver Badge Count", validateForErrorBlock: { (text) -> String? in
+        self.silverBadgeTextEntryView?.set(delegate: self,
+                                           placeholderText: "Silver Badge Count",
+                                           keyboardType: .numberPad,
+                                           validateForErrorBlock: { (text) -> String? in
             if let number = Int(text ?? ""),
                 number % 3 == 0 {
                 return nil
@@ -70,7 +93,11 @@ class AddUserViewController: UIViewController {
             }
         })
         
-        self.bronzeBadgeTextEntryView?.set(placeholderText: "Bronze Badge Count", validateForErrorBlock: { (text) -> String? in
+        self.bronzeBadgeTextEntryView?.set(delegate: self,
+                                           placeholderText: "Bronze Badge Count",
+                                           keyboardType: .numberPad,
+                                           returnKeyType: .done,
+                                           validateForErrorBlock: { (text) -> String? in
             if let number = Int(text ?? ""),
                 number % 3 == 0 {
                 return nil
@@ -82,11 +109,12 @@ class AddUserViewController: UIViewController {
     }
     
     @IBAction func addUserTapped() {
+        
         var firstInvalidTextEntryView: UserTextEntryView? = nil
         for textEntryView in self.textEntryViews ?? [] {
-            if let textEntryView = textEntryView,
-                textEntryView.validate() == false {
-                if firstInvalidTextEntryView == nil {
+            if let textEntryView = textEntryView {
+                let _ = textEntryView.resignFirstResponder()
+                if textEntryView.validate() == false && firstInvalidTextEntryView == nil {
                     firstInvalidTextEntryView = textEntryView
                 }
             }
@@ -96,19 +124,71 @@ class AddUserViewController: UIViewController {
             self.scrollView?.scrollRectToVisible(firstInvalidTextEntryView.frame, animated: true)
         }
         else {
+            let user = User()
+            user.displayName = self.displayNameTextEntryView?.text
+            user.reputation = Int(self.reputationTextEntryView?.text ?? "") ?? 0
+            user.goldBadgeCount = Int(self.goldBadgeTextEntryView?.text ?? "") ?? 0
+            user.silverBadgeCount = Int(self.silverBadgeTextEntryView?.text ?? "") ?? 0
+            user.bronzeBadgeCount = Int(self.bronzeBadgeTextEntryView?.text ?? "") ?? 0
             
+            self.addUserCompletionBlock?(user)
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func userTextEntryViewDidEndEditing(view: UserTextEntryView?) {
+        if let textEntryViews = self.textEntryViews,
+            let viewIndex = textEntryViews.firstIndex(of: view)
+        {
+            if viewIndex == textEntryViews.count - 1
+            {
+                self.addUserTapped()
+            }
+            else
+            {
+                if let nextTextEntryView = textEntryViews[viewIndex + 1]
+                {
+                    let _ = nextTextEntryView.becomeFirstResponder()
+                }
+            }
+        }
     }
-    */
-
+    
+    func addKeyboardObservers() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        let userInfo:NSDictionary = notification.userInfo! as NSDictionary
+        let keyboardFrame:NSValue = userInfo.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        let keyboardHeight = keyboardRectangle.height
+        let duration = userInfo.object(forKey: UIResponder.keyboardAnimationDurationUserInfoKey) as! NSNumber
+        self.bottomLayoutConstraint?.constant = keyboardHeight
+        self.adjustAddUserButtonHeight(addSafeAreaHeight: false)
+        UIView.animate(withDuration: duration.doubleValue) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        let userInfo:NSDictionary = notification.userInfo! as NSDictionary
+        let duration = userInfo.object(forKey: UIResponder.keyboardAnimationDurationUserInfoKey) as! NSNumber
+        self.bottomLayoutConstraint?.constant = 0
+        self.adjustAddUserButtonHeight(addSafeAreaHeight: true)
+        UIView.animate(withDuration: duration.doubleValue) {
+            self.view.layoutIfNeeded()
+        }
+    }
 }

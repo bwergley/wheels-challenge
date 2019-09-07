@@ -70,7 +70,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTs-YQ-uhB">
-                                <rect key="frame" x="0.0" y="822" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="856" width="414" height="40"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0Bq-DK-ehu"/>
@@ -81,7 +81,7 @@
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RVD-rK-qLg">
-                                <rect key="frame" x="0.0" y="88" width="414" height="734"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="768"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N2Q-Yg-LSJ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
@@ -136,7 +136,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hTs-YQ-uhB" firstAttribute="top" secondItem="RVD-rK-qLg" secondAttribute="bottom" id="Nv6-d9-SPC"/>
-                            <constraint firstItem="mnT-Of-oyb" firstAttribute="bottom" secondItem="hTs-YQ-uhB" secondAttribute="bottom" id="UEL-nr-H6v"/>
+                            <constraint firstAttribute="bottom" secondItem="hTs-YQ-uhB" secondAttribute="bottom" id="UEL-nr-H6v"/>
                             <constraint firstItem="mnT-Of-oyb" firstAttribute="trailing" secondItem="hTs-YQ-uhB" secondAttribute="trailing" id="W9d-aa-XZj"/>
                             <constraint firstItem="RVD-rK-qLg" firstAttribute="leading" secondItem="mnT-Of-oyb" secondAttribute="leading" id="dSH-M8-LEg"/>
                             <constraint firstItem="RVD-rK-qLg" firstAttribute="top" secondItem="mnT-Of-oyb" secondAttribute="top" id="fOt-Ki-uww"/>
@@ -149,6 +149,9 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="0db-i2-4iD"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="addUserButton" destination="hTs-YQ-uhB" id="Dr2-GV-dby"/>
+                        <outlet property="addUserButtonHeightConstraint" destination="0Bq-DK-ehu" id="Ac6-Gu-EHz"/>
+                        <outlet property="bottomLayoutConstraint" destination="UEL-nr-H6v" id="QIA-LW-L73"/>
                         <outlet property="bronzeBadgeTextEntryView" destination="Dfe-wi-nQO" id="TBx-xu-jIz"/>
                         <outlet property="displayNameTextEntryView" destination="W5S-tK-oPy" id="xAc-GP-0WQ"/>
                         <outlet property="goldBadgeTextEntryView" destination="MIG-R1-EZ9" id="3Cq-7W-voa"/>

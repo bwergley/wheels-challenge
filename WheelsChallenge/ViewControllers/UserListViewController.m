@@ -16,7 +16,7 @@
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *spinnerView;
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
-@property (nonatomic, strong) NSArray<User *> *users;
+@property (nonatomic, strong) NSMutableArray<User *> *users;
 
 @end
 
@@ -36,7 +36,7 @@
     __weak typeof(self) weakSelf = self;
     [[UserManager sharedInstance] beginGetUserListWithCompletion:^(NSArray<User *> *users) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            weakSelf.users = users;
+            weakSelf.users = [users mutableCopy];
             [weakSelf.tableView reloadData];
             [UIView animateWithDuration:0.5 animations:^{
                 weakSelf.tableView.alpha = 1;
@@ -77,6 +77,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"AddUserSegue"]) {
         AddUserViewController *vc = [segue destinationViewController];
+        vc.addUserCompletionBlock = ^(User *user) {
+            [self.users addObject:user];
+            [self.tableView reloadData];
+        };
     }
 }
 

@@ -8,8 +8,19 @@
 
 import UIKit
 
-class UserTextEntryView: UIView {
+protocol UserTextEntryViewDelegate: NSObject {
+    func userTextEntryViewDidEndEditing(view: UserTextEntryView?)
+}
 
+class UserTextEntryView: UIView, UITextFieldDelegate {
+    
+    var text: String? {
+        get {
+            return self.textField?.text
+        }
+    }
+    
+    private var delegate: UserTextEntryViewDelegate?
     private var textField: UITextField?
     private var errorLabel: UILabel?
     private var validateForErrorBlock: ((String?) -> String?)?
@@ -19,8 +30,11 @@ class UserTextEntryView: UIView {
         self.setupView()
     }
     
-    func set(placeholderText: String?, validateForErrorBlock: @escaping (String?) -> String?) {
+    func set(delegate: UserTextEntryViewDelegate?, placeholderText: String?, keyboardType: UIKeyboardType = UIKeyboardType.default, returnKeyType: UIReturnKeyType = .next, validateForErrorBlock: @escaping (String?) -> String?) {
+        self.delegate = delegate
+        self.textField?.keyboardType = keyboardType
         self.textField?.placeholder = placeholderText
+        self.textField?.returnKeyType = returnKeyType
         self.validateForErrorBlock = validateForErrorBlock
     }
     
@@ -39,6 +53,16 @@ class UserTextEntryView: UIView {
         }
     }
     
+    override func becomeFirstResponder() -> Bool {
+        self.textField?.becomeFirstResponder()
+        return true
+    }
+    
+    override func resignFirstResponder() -> Bool {
+        self.textField?.resignFirstResponder()
+        return true
+    }
+    
     private func setupView() {
         let textField = UITextField(frame: .zero)
         self.addSubview(textField)
@@ -50,6 +74,7 @@ class UserTextEntryView: UIView {
         textField.heightAnchor.constraint(equalToConstant: 50).isActive = true
         textField.clearButtonMode = .whileEditing
         textField.borderStyle = .roundedRect
+        textField.delegate = self
         self.textField = textField
         
         let errorLabel = UILabel(frame: .zero)
@@ -60,5 +85,10 @@ class UserTextEntryView: UIView {
         errorLabel.textColor = .red
         errorLabel.isHidden = true
         self.errorLabel = errorLabel
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.delegate?.userTextEntryViewDidEndEditing(view: self)
+        return true
     }
 }

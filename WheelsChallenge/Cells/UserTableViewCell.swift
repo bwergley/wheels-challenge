@@ -51,6 +51,10 @@ class UserTableViewCell: UITableViewCell {
                     }
                 })
             }
+            else
+            {
+                self.profileImageView?.image = nil
+            }
         }
     }
 }
